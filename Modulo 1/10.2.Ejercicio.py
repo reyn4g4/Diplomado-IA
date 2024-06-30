@@ -17,3 +17,15 @@ estudiantes = [
     {"nombre": "David", "matematicas": 90, "literatura": 88, "ciencia": 91},
     {"nombre": "Eva", "matematicas": 88, "literatura": 76, "ciencia": 85}
 ]
+
+for estudiante in estudiantes:
+    calificaciones = [estudiante["matematicas"], estudiante["literatura"], estudiante["ciencia"]]
+    promedio = sum(calificaciones) / len(calificaciones)
+    estudiante["promedio"] = promedio
+
+    
+estudiantes_ordenados = sorted(estudiantes, key=lambda x: x["promedio"], reverse=True)
+
+# Imprimir la lista ordenada de estudiantes con sus promedios
+for estudiante in estudiantes_ordenados:
+    print(f'{estudiante["nombre"]}: {estudiante["promedio"]:.2f}')
